@@ -1,5 +1,5 @@
 # Sprint 1
-
+ 
 - [X] Research a topic of interest and submit it for approval
 - [X] Find a similar repository to your topic
 - [X] Form a Repository in KSU-IS
