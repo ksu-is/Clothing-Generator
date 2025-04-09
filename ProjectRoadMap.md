@@ -8,10 +8,10 @@
 
 # Sprint 2
 
-- [ ] Began creating a code for the Clothing Generator
-- [ ] Make small updates and add commit messages to the repository
-- [ ] Make 6 code changes to committ with comments on what you changed
-- [ ] Mark X on ProjectRoadMap.md once complete
+- [X] Began creating a code for the Clothing Generator
+- [X] Make small updates and add commit messages to the repository
+- [X] Make 6 code changes to committ with comments on what you changed
+- [X] Mark X on ProjectRoadMap.md once complete
 
 # Sprint 3
 
