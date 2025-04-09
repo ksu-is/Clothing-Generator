@@ -13,28 +13,16 @@ def weather_input():
     return weather
 
 # Asking the user for input based on temperature
-def weather_input():
-    print("What's the temperature like? Options: cold, hot")
+def temperature_input():
+    print("What's the weather like? Options: cold, hot")
     temperature = input("Temperature: ").strip().lower()
     return temperature
-  
+
 # Asking the user for the type of outing.
 def outing_input():
-    print("Where are you going? Options: casual, formal, workout, party")
+    print("Where are you going? Options: casual, formal, workout, party, church")
     outing = input("Outing: ").strip().lower()
     return outing
-
-# Asking the user for their preference of Tops.
-def tops_preferences():
-    print("Do you prefer brighter or darker colors? Options: long sleeve, short sleeve, tank top, sweater")
-    tops_preference = input("Tops preference: ").strip().lower()
-    return tops_preference
-  
-  # Asking the user for their preference of Bottoms.
-def bottoms_preferences():
-    print("Do you prefer brighter or darker colors? Options: jeans, jean shorts, leggings, athletic shorts, sundress")
-    bottoms_preference = input("Bottoms preference: ").strip().lower()
-    return bottoms_preference
 
 # Asking the user for their preference of either lighter or darker clothing.
 def color_preferences():
@@ -42,39 +30,65 @@ def color_preferences():
     color_preference = input("Color preference: ").strip().lower()
     return color_preference
 
+# Asking the user for their preference of tops.
+def tops_preferences():
+    print("what is your preferrence in tops? Options: short sleeve, long sleeve, tank top, sweater, crop top")
+    tops_preferences = input("Tops preference: ").strip().lower()
+    return tops_preferences
+
+# Asking the user for their preference of bottoms.
+def bottoms_preferences():
+    print("what is your preferrence in bottoms? Options: jean, jean shorts, athletic shorts, athletic pants, skirt")
+    bottoms_preferences = input("Bottoms preference: ").strip().lower()
+    return bottoms_preferences
+
+# Asking the user for their preference of jackets.
+def bottoms_preferences():
+    print("what is your preferrence in jackets? Options: jean jacket, puffer jacket, sweater cardigan, cardigan, trench coat, blazer")
+    jackets_preferences = input("Jackets preference: ").strip().lower()
+    return jackets_preferences
+
+# Asking the user for their preference of shoes.
+def shoes_preferences():
+    print("what is your preferrence in shoes? Options: Sandals, sneakers, dress shoes, boots, flats, heels, sandals")
+    shoes_preferences = input("Shoes preference: ").strip().lower()
+    return shoes_preferences
+
 # Generates an outfit suggestion based on gender, weather, type of outing, and color preference
 def suggest_outfit(gender, weather, outing, color_preference):
     outfits = {
         "male": {
-            "sunny and hot": {
-                "casual": [("T-shirt and jean shorts", ["white", "beige", "light blue", "black", "grey"]),
-                           ("Light polo shirt", ["sky blue", "yellow", "pink", "grey", "navy blue", "white", "black"])],
-                "formal": [("button down and two piece suit", ["tan", "light green", "white" "light blue", "grey", "black"])],
-                "workout": [("Tank top and running shorts", ["white", "grey", "black", "blue"])],
-                "party": [("open short sleeve button down and matching shorts", ["bright green", "orange", "light blue", "black", "white"]),
-                          ("T-shirt", ["light orange", "light green", "white", "black"])]
+            "sunny": {
+                "casual": [("T-shirt and shorts", ["white", "beige", "light blue"]),
+                           ("Light polo shirt", ["sky blue", "yellow"])],
+                "formal": [("Light suit", ["cream colored", "light gray"]),
+                           ("Summer blazer with chinos", ["tan", "light green"])],
+                "workout": [("Tank top and running shorts", ["white", "gray"])],
+                "party": [("Floral shirt and chinos", ["bright green", "orange"]),
+                          ("Bright-colored T-shirt", ["red", "yellow"])]
             },
-              "sunny and cold": {
-                "casual": [("T-shirt and jean shorts", ["white", "beige", "light blue", "black", "grey"]),
-                           ("Light polo shirt", ["sky blue", "yellow", "pink", "grey", "navy blue", "white", "black"])],
-                "formal": [("button down and two piece suit", ["tan", "light green", "white" "light blue", "grey", "black"])],
-                "workout": [("Tank top and running shorts", ["white", "grey", "black", "blue"])],
-                "party": [("open short sleeve button down and matching shorts", ["bright green", "orange", "light blue", "black", "white"]),
-                          ("T-shirt", ["light orange", "light green", "white", "black"])]
-            },
-            "rainy and hot": {
+            "rainy": {
                 "casual": [("Raincoat and jeans", ["navy", "dark gray"]),
                            ("Waterproof jacket", ["black", "olive"])],
                 "formal": [("Trench coat and formal pants", ["black", "gray"])],
                 "workout": [("Water-resistant hoodie and joggers", ["dark blue", "black"])],
                 "party": [("Dark blazer with waterproof pants", ["black", "dark brown"])]
-            }
-              "rainy and cold": {
-                "casual": [("Raincoat and jeans", ["navy", "dark gray"]),
-                           ("Waterproof jacket", ["black", "olive"])],
-                "formal": [("Trench coat and formal pants", ["black", "gray"])],
-                "workout": [("Water-resistant hoodie and joggers", ["dark blue", "black"])],
-                "party": [("Dark blazer with waterproof pants", ["black", "dark brown"])]
+            },
+            "cold": {
+                "casual": [("Sweater and jeans", ["dark green", "navy"]),
+                           ("Hoodie and joggers", ["burgundy", "gray"])],
+                "formal": [("Wool suit", ["dark gray", "black"]),
+                           ("Long coat and scarf", ["tan", "burgundy"])],
+                "workout": [("Thermal gear and sweatpants", ["black", "charcoal gray"])],
+                "party": [("Blazer and warm trousers", ["navy", "brown"])]
+            },
+            "hot": {
+                "casual": [("Tank top and shorts", ["white", "tan"]),
+                           ("Short-sleeve shirt", ["bright blue", "yellow"])],
+                "formal": [("Linen suit", ["beige", "white"]),
+                           ("Light cotton shirt with trousers", ["cream", "green"])],
+                "workout": [("Breathable tank top and shorts", ["white", "gray"])],
+                "party": [("Short-sleeved shirt and lightweight pants", ["bright red", "pink"])]
             }
         },
         "female": {
@@ -109,12 +123,45 @@ def suggest_outfit(gender, weather, outing, color_preference):
                            ("Linen dress", ["pink", "white"])],
                 "workout": [("Breathable tank top and shorts", ["white", "gray"])],
                 "party": [("Short sundress", ["red", "floral patterns"])]
-     
+            }
+        },
+        "nonbinary": {
+            "sunny": {
+                "casual": [("T-shirt and shorts", ["white", "beige", "light blue"]),
+                           ("Light sundress", ["pink", "yellow"])],
+                "formal": [("Light suit", ["cream colored", "light gray"]),
+                           ("Summer dress", ["floral patterns", "pink"])],
+                "workout": [("Tank top and running shorts", ["white", "gray"])],
+                "party": [("Floral shirt and chinos", ["bright green", "orange"]),
+                          ("Bright-colored jumpsuit", ["red", "yellow"])]
+            },
+            "rainy": {
+                "casual": [("Raincoat and jeans", ["navy", "dark gray"]),
+                           ("Waterproof jacket", ["black", "olive"])],
+                "formal": [("Trench coat and formal pants", ["black", "charcoal gray"])],
+                "workout": [("Water-resistant hoodie and joggers", ["dark blue", "black"])],
+                "party": [("Dark-colored outfit with a raincoat", ["black", "dark brown"])]
+            },
+            "cold": {
+                "casual": [("Sweater and jeans", ["burgundy", "navy"]),
+                           ("Hoodie and joggers", ["maroon", "gray"])],
+                "formal": [("Wool coat and scarf", ["dark green", "black"]),
+                           ("Long coat and trousers", ["tan", "cream colored"])],
+                "workout": [("Thermal gear and sweatpants", ["black", "charcoal"])],
+                "party": [("Blazer and warm trousers", ["navy", "dark red"])]
+            },
+            "hot": {
+                "casual": [("Tank top and shorts", ["white", "tan"]),
+                           ("Sleeveless dress", ["yellow", "pink"])],
+                "formal": [("Linen suit", ["beige", "white"]),
+                           ("Light blouse and skirt", ["cream colored", "green"])],
+                "workout": [("Breathable tank top and shorts", ["white", "gray"])],
+                "party": [("Short-sleeved shirt and lightweight pants", ["bright red", "orange"])]
             }
         }
     }
 
-    default_light_colors = ["red", "yellow", "sky blue", "green", "pink", "white"]
+    default_bright_colors = ["red", "yellow", "sky blue", "green", "pink", "white"]
     default_dark_colors = ["black", "navy", "charcoal gray", "maroon", "dark green", "brown"]
 
     if gender in outfits and weather in outfits[gender] and outing in outfits[gender][weather]:
@@ -134,9 +181,9 @@ def suggest_outfit(gender, weather, outing, color_preference):
     else:
         return "Sorry, I don't have an outfit suggestion for the given combination at this time."
 
-# main function to run the clothing generator
+# main function to run the outfit generator
 def main():
-    print("Welcome to the Clothing Generator!")
+    print("Welcome to the Outfit Generator!")
     gender = gender_input()
     weather = weather_input()
     outing = outing_input()
