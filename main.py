@@ -23,12 +23,19 @@ def outing_input():
     print("Where are you going? Options: casual, formal, workout, party")
     outing = input("Outing: ").strip().lower()
     return outing
-# Asking the user for their preference of either Long sleeve, Short sleeve, Tank top, or Sweater.
-def top_preferences():
+
+# Asking the user for their preference of Tops.
+def tops_preferences():
     print("Do you prefer brighter or darker colors? Options: long sleeve, short sleeve, tank top, sweater")
-    top_preference = input("Top preference: ").strip().lower()
-    return top_preference
+    tops_preference = input("Tops preference: ").strip().lower()
+    return tops_preference
   
+  # Asking the user for their preference of Bottoms.
+def bottoms_preferences():
+    print("Do you prefer brighter or darker colors? Options: jeans, jean shorts, leggings, athletic shorts, sundress")
+    bottoms_preference = input("Bottoms preference: ").strip().lower()
+    return bottoms_preference
+
 # Asking the user for their preference of either lighter or darker clothing.
 def color_preferences():
     print("Do you prefer brighter or darker colors? Options: light, dark")
