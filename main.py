@@ -50,7 +50,7 @@ def bottoms_preferences():
 
 # Asking the user for their preference of shoes.
 def shoes_preferences():
-    print("what is your preferrence in shoes? Options: Sandals, sneakers, dress shoes, boots, flats, heels, sandals")
+    print("what is your preferrence in shoes? Options: sneakers, dress shoes, boots, flats, heels, sandals")
     shoes_preferences = input("Shoes preference: ").strip().lower()
     return shoes_preferences
 
@@ -58,37 +58,46 @@ def shoes_preferences():
 def suggest_outfit(gender, weather, outing, color_preference):
     outfits = {
         "male": {
-            "sunny": {
-                "casual": [("T-shirt and shorts", ["white", "beige", "light blue"]),
-                           ("Light polo shirt", ["sky blue", "yellow"])],
-                "formal": [("Light suit", ["cream colored", "light gray"]),
-                           ("Summer blazer with chinos", ["tan", "light green"])],
-                "workout": [("Tank top and running shorts", ["white", "gray"])],
-                "party": [("Floral shirt and chinos", ["bright green", "orange"]),
-                          ("Bright-colored T-shirt", ["red", "yellow"])]
+            "sunny and hot ": {
+                "casual": [("T-shirt and shorts with sneakers", ["white", "beige", "light blue"]),
+                           ("Light polo shirt and jean shorts with sandals", ["sky blue", "blue"])],
+                "formal": [("Light suit with dress shoes", ["cream colored", "light pink"]),
+                           ("Summer blazer with dress pant and loafers", ["tan", "brown"])],
+                "workout": [("Tank top and running shorts with sneakers", ["white", "gray"])],
+                            ("Lightweight shirt and shorts with sneakers", ["navy blue", "yellow"]),
+                "party": [("Floral shirt and Khaki Pants sandals", ["khaki", "orange"]),
+                          ("Bright-colored T-shirt and jean shorts with sneakers", ["red", "yellow", "green", "black", "white"])]
+                "church": [("Light button-up short sleeve shirt and dress pants with dress loafers", ["white", "Light blue"])],
+                            [("Light blazer with dress pants and dress shoes", ["cream colored", "Light gray"])]
+            },           
+            "sunny and cold ": {
+                "casual": [("Long sleeve shirt and jeans with sneakers", ["black", "red", "grey"]),
+                           ("sweater shirt and jeans with boots and leather jacket", ["grey", "blue", "white"])],
+                "formal": [("suit with dress shoes and trench coat", ["tan", "cream color", "white"]),
+                           ("blazer with dress pant and loafers", ["tan", "brown"])],
+                "workout": [("long sleevee athletic shirt and joggers with sneakers", ["blue", "gray"])],
+                            ("Lightweight hoodie and sweat pants with sneakers", ["black", "white"]),
+                "party": [(" long sleeve with a button- down cardigan and jeans with boots", ["blue", "orange", "light green", "white"]),
+                          ("Bright-colored zip up leather jacket with a sweater and dark plants with sneakers", ["orange", "white", "cream", "black", "white"])]
+                "church": [("Dark button-up Long sleeve shirt and dress pants with dress loafers", ["white", "Light blue"])],
+                            [("Light blazer with dress pants and dress shoes", ["tan", "Light brown", "brown"])]
             },
-            "rainy": {
-                "casual": [("Raincoat and jeans", ["navy", "dark gray"]),
-                           ("Waterproof jacket", ["black", "olive"])],
-                "formal": [("Trench coat and formal pants", ["black", "gray"])],
-                "workout": [("Water-resistant hoodie and joggers", ["dark blue", "black"])],
-                "party": [("Dark blazer with waterproof pants", ["black", "dark brown"])]
+            "rainy and hot": {
+                "casual": [("Raincoat and jeans with rain boots", ["navy", "dark gray"]),
+                           ("Waterproof jacket and jeans with sneakers", ["black", "olive"])],
+                "formal": [("blazer and formal pants with dress shoes and poncho", ["black", "gray"])],
+                "workout": [("Water-resistant hoodie and joggers with sneakers", ["dark blue", "black"])],
+                "party": [("Dark button down leather short sleeve jacket and dark jeans with sneakers", ["black", "dark orange"])]
+                "church": [("Light blazer with jeans and loafers", ["light blue", "white"])]
             },
-            "cold": {
-                "casual": [("Sweater and jeans", ["dark green", "navy"]),
-                           ("Hoodie and joggers", ["burgundy", "gray"])],
-                "formal": [("Wool suit", ["dark gray", "black"]),
-                           ("Long coat and scarf", ["tan", "burgundy"])],
-                "workout": [("Thermal gear and sweatpants", ["black", "charcoal gray"])],
-                "party": [("Blazer and warm trousers", ["navy", "brown"])]
-            },
-            "hot": {
-                "casual": [("Tank top and shorts", ["white", "tan"]),
-                           ("Short-sleeve shirt", ["bright blue", "yellow"])],
-                "formal": [("Linen suit", ["beige", "white"]),
-                           ("Light cotton shirt with trousers", ["cream", "green"])],
-                "workout": [("Breathable tank top and shorts", ["white", "gray"])],
-                "party": [("Short-sleeved shirt and lightweight pants", ["bright red", "pink"])]
+            "rainy and cold": {
+                "casual": [("Sweater and jeans and rain jacket with boots", ["dark green", "orange"]),
+                           ("Hoodie and joggers and sneakers", ["burgundy", "gray"])],
+                "formal": [("Wool suit with dress boots", ["dark gray", "black"]),
+                           ("Long coat and scarf with dress pants and sneakers", ["tan", "burgundy"])],
+                "workout": [("Thermal gear and sweatpants with sneakers", ["black", "charcoal gray"])],
+                "party": [("Water-resistant long sleeve shirt and jeans with sneakers", ["navy", "brown"])],
+                "church": [("Long trench rain jacket and button-up with dress pants with dress shoes", ["white", "grey", "black"])]
             }
         },
         "female": {
@@ -123,40 +132,6 @@ def suggest_outfit(gender, weather, outing, color_preference):
                            ("Linen dress", ["pink", "white"])],
                 "workout": [("Breathable tank top and shorts", ["white", "gray"])],
                 "party": [("Short sundress", ["red", "floral patterns"])]
-            }
-        },
-        "nonbinary": {
-            "sunny": {
-                "casual": [("T-shirt and shorts", ["white", "beige", "light blue"]),
-                           ("Light sundress", ["pink", "yellow"])],
-                "formal": [("Light suit", ["cream colored", "light gray"]),
-                           ("Summer dress", ["floral patterns", "pink"])],
-                "workout": [("Tank top and running shorts", ["white", "gray"])],
-                "party": [("Floral shirt and chinos", ["bright green", "orange"]),
-                          ("Bright-colored jumpsuit", ["red", "yellow"])]
-            },
-            "rainy": {
-                "casual": [("Raincoat and jeans", ["navy", "dark gray"]),
-                           ("Waterproof jacket", ["black", "olive"])],
-                "formal": [("Trench coat and formal pants", ["black", "charcoal gray"])],
-                "workout": [("Water-resistant hoodie and joggers", ["dark blue", "black"])],
-                "party": [("Dark-colored outfit with a raincoat", ["black", "dark brown"])]
-            },
-            "cold": {
-                "casual": [("Sweater and jeans", ["burgundy", "navy"]),
-                           ("Hoodie and joggers", ["maroon", "gray"])],
-                "formal": [("Wool coat and scarf", ["dark green", "black"]),
-                           ("Long coat and trousers", ["tan", "cream colored"])],
-                "workout": [("Thermal gear and sweatpants", ["black", "charcoal"])],
-                "party": [("Blazer and warm trousers", ["navy", "dark red"])]
-            },
-            "hot": {
-                "casual": [("Tank top and shorts", ["white", "tan"]),
-                           ("Sleeveless dress", ["yellow", "pink"])],
-                "formal": [("Linen suit", ["beige", "white"]),
-                           ("Light blouse and skirt", ["cream colored", "green"])],
-                "workout": [("Breathable tank top and shorts", ["white", "gray"])],
-                "party": [("Short-sleeved shirt and lightweight pants", ["bright red", "orange"])]
             }
         }
     }
